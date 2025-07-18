@@ -1,0 +1,113 @@
+#root {
+    padding: 0 0.5rem 0.5rem;
+    background: linear-gradient(to bottom right, #f1f5f9, #e2e8f0);
+    min-height: 100vh;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #1e3a8a;
+    margin: 0;
+}
+
+@media (min-width: 640px) {
+    #root {
+        padding: 0 1rem 1rem;
+    }
+}
+
+.scroller {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.bullets {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+.bullets li {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #1e3a8a;
+    border-radius: 9999px;
+    opacity: 0.6;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.bullets li.active {
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+.banner {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+}
+
+@media (min-width: 640px) {
+    .banner {
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+}
+
+.mobile-table thead {
+    display: none;
+}
+
+.mobile-table tbody tr {
+    display: block;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.mobile-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+    font-size: 0.875rem;
+}
+
+.mobile-table tbody td::before {
+    content: attr(data-label);
+    font-weight: 500;
+    color: #64748b;
+    margin-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .mobile-table thead {
+        display: table-header-group;
+    }
+    .mobile-table tbody tr {
+        display: table-row;
+        border: none;
+        border-bottom: 1px solid #e5e7eb;
+        border-radius: 0;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .mobile-table tbody td {
+        display: table-cell;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+    .mobile-table tbody td::before {
+        display: none;
+        content: none;
+    }
+}
